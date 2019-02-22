@@ -1,0 +1,329 @@
+﻿AttributeError at /api/v1/gwares
+'str' object has no attribute 'values'
+
+Request Method: POST
+Request URL: https://lbe.litebox.ru/api/v1/gwares
+Django Version: 2.1
+Python Executable: /usr/local/bin/uwsgi
+Python Version: 3.6.2
+Python Path: ['.', '', '/usr/local/lib/python36.zip', '/usr/local/lib/python3.6', '/usr/local/lib/python3.6/lib-dynload', '/usr/local/lib/python3.6/site-packages']
+Server time: Fri, 22 Feb 2019 14:08:10 +0000
+Installed Applications:
+['django.contrib.admin',
+ 'django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'django.contrib.sites',
+ 'compressor',
+ 'rest_framework',
+ 'rest_framework.authtoken',
+ 'rest_framework_swagger',
+ 'allauth',
+ 'allauth.account',
+ 'rest_auth',
+ 'exchange.apps.ExchangeConfig']
+Installed Middleware:
+['django.middleware.security.SecurityMiddleware',
+ 'django.contrib.sessions.middleware.SessionMiddleware',
+ 'django.middleware.common.CommonMiddleware',
+ 'django.middleware.csrf.CsrfViewMiddleware',
+ 'django.contrib.auth.middleware.AuthenticationMiddleware',
+ 'django.contrib.messages.middleware.MessageMiddleware',
+ 'django.middleware.clickjacking.XFrameOptionsMiddleware']
+
+
+Traceback:
+
+File "./api/serializers.py" in __init__
+  58.             if len(self.body.values()) == 0:
+
+During handling of the above exception ('str' object has no attribute 'values'), another exception occurred:
+
+File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py" in inner
+  34.             response = get_response(request)
+
+File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py" in _get_response
+  126.                 response = self.process_exception_by_middleware(e, request)
+
+File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py" in _get_response
+  124.                 response = wrapped_callback(request, *callback_args, **callback_kwargs)
+
+File "/usr/local/lib/python3.6/site-packages/django/views/decorators/csrf.py" in wrapped_view
+  54.         return view_func(*args, **kwargs)
+
+File "/usr/local/lib/python3.6/site-packages/django/views/generic/base.py" in view
+  68.             return self.dispatch(request, *args, **kwargs)
+
+File "/usr/local/lib/python3.6/site-packages/rest_framework/views.py" in dispatch
+  483.             response = self.handle_exception(exc)
+
+File "/usr/local/lib/python3.6/site-packages/rest_framework/views.py" in handle_exception
+  443.             self.raise_uncaught_exception(exc)
+
+File "/usr/local/lib/python3.6/site-packages/rest_framework/views.py" in dispatch
+  480.             response = handler(request, *args, **kwargs)
+
+File "./api/v1/views.py" in post
+  1348.         serializers.GwaresBodySerializer(request).validate()
+
+File "./api/serializers.py" in __init__
+  61.             if len(self.body[0].values()) == 0:
+
+Exception Type: AttributeError at /api/v1/gwares
+Exception Value: 'str' object has no attribute 'values'
+Request information:
+USER: nda866@yandex.ru
+
+GET: No GET data
+
+POST: No POST data
+
+FILES: No FILES data
+
+COOKIES: No cookie data
+
+META:
+CONTENT_LENGTH = '184'
+CONTENT_TYPE = 'application/json'
+DOCUMENT_ROOT = '/usr/local/nginx/html'
+HTTPS = 'on'
+HTTP_ACCEPT = 'application/json'
+HTTP_AUTHORIZATION = 'Token 04684841721fcdfe107ece2d8ec9804b0e14678a'
+HTTP_CONTENT_LENGTH = '184'
+HTTP_CONTENT_TYPE = 'application/json'
+HTTP_HOST = 'lbe.litebox.ru'
+HTTP_USER_AGENT = '1C+Enterprise/8.3'
+PATH_INFO = '/api/v1/gwares'
+QUERY_STRING = ''
+REMOTE_ADDR = '176.114.128.163'
+REMOTE_PORT = '1700'
+REQUEST_METHOD = 'POST'
+REQUEST_URI = '/api/v1/gwares'
+SCRIPT_NAME = ''
+SERVER_NAME = 'lbe.litebox.ru'
+SERVER_PORT = '443'
+SERVER_PROTOCOL = 'HTTP/1.1'
+uwsgi.node = b'78e3b2a63b79'
+uwsgi.version = b'2.0.15'
+wsgi.errors = <_io.TextIOWrapper name=2 mode='w' encoding='UTF-8'>
+wsgi.file_wrapper = ''
+wsgi.input = <uwsgi._Input object at 0x7fc0bfb46d98>
+wsgi.multiprocess = True
+wsgi.multithread = False
+wsgi.run_once = False
+wsgi.url_scheme = 'https'
+wsgi.version = '(1, 0)'
+
+Settings:
+Using settings module exchangeserver.settings
+ABSOLUTE_URL_OVERRIDES = {}
+ACCOUNT_LOGOUT_ON_GET = True
+ADMINS = [('Stanislav Katasonov', 's.katasonov@litebox.ru'), ('Sergey Scheglov', 's.scheglov@litebox.ru')]
+ALLOWED_HOSTS = ['lbe.litebox.ru', 'lbe-test.litebox.ru', '127.0.0.1']
+APPEND_SLASH = True
+AUTHENTICATION_BACKENDS = "('django.contrib.auth.backends.ModelBackend', 'helpers.auth.AuthEmail', 'helpers.auth.AuthEmailAsLogin', 'helpers.auth.AuthLoginAsLogin', 'helpers.auth.AuthCustom', 'allauth.account.auth_backends.AuthenticationBackend')"
+AUTH_PASSWORD_VALIDATORS = '********************'
+AUTH_USER_MODEL = 'auth.User'
+BASE_DIR = '/usr/src/app'
+CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_KEY_PREFIX = '********************'
+CACHE_MIDDLEWARE_SECONDS = 600
+COMPRESS_CACHE_BACKEND = 'default'
+COMPRESS_CACHE_KEY_FUNCTION = '********************'
+COMPRESS_CLEAN_CSS_ARGUMENTS = ''
+COMPRESS_CLEAN_CSS_BINARY = 'cleancss'
+COMPRESS_CLOSURE_COMPILER_ARGUMENTS = ''
+COMPRESS_CLOSURE_COMPILER_BINARY = 'java -jar compiler.jar'
+COMPRESS_CSSTIDY_ARGUMENTS = '--template=highest'
+COMPRESS_CSSTIDY_BINARY = 'csstidy'
+COMPRESS_CSS_COMPRESSOR = 'compressor.css.CssCompressor'
+COMPRESS_CSS_FILTERS = ['compressor.filters.css_default.CssAbsoluteFilter']
+COMPRESS_CSS_HASHING_METHOD = 'mtime'
+COMPRESS_DATA_URI_MAX_SIZE = 1024
+COMPRESS_DEBUG_TOGGLE = None
+COMPRESS_ENABLED = False
+COMPRESS_JINJA2_GET_ENVIRONMENT = <function CompressorConf.JINJA2_GET_ENVIRONMENT at 0x7fc0c04d18c8>
+COMPRESS_JS_COMPRESSOR = 'compressor.js.JsCompressor'
+COMPRESS_JS_FILTERS = ['compressor.filters.jsmin.JSMinFilter']
+COMPRESS_MINT_DELAY = 30
+COMPRESS_MTIME_DELAY = 10
+COMPRESS_OFFLINE = False
+COMPRESS_OFFLINE_CONTEXT = {'STATIC_URL': '/static/'}
+COMPRESS_OFFLINE_MANIFEST = 'manifest.json'
+COMPRESS_OFFLINE_TIMEOUT = 31536000
+COMPRESS_OUTPUT_DIR = 'CACHE'
+COMPRESS_PARSER = 'compressor.parser.AutoSelectParser'
+COMPRESS_PRECOMPILERS = '()'
+COMPRESS_REBUILD_TIMEOUT = 2592000
+COMPRESS_ROOT = '/usr/src/app/static'
+COMPRESS_STORAGE = 'compressor.storage.CompressorFileStorage'
+COMPRESS_TEMPLATE_FILTER_CONTEXT = {'STATIC_URL': '/static/'}
+COMPRESS_URL = '/static/'
+COMPRESS_VERBOSE = False
+COMPRESS_YUGLIFY_BINARY = 'yuglify'
+COMPRESS_YUGLIFY_CSS_ARGUMENTS = '--terminal'
+COMPRESS_YUGLIFY_JS_ARGUMENTS = '--terminal'
+COMPRESS_YUI_BINARY = 'java -jar yuicompressor.jar'
+COMPRESS_YUI_CSS_ARGUMENTS = ''
+COMPRESS_YUI_JS_ARGUMENTS = ''
+CSRF_COOKIE_AGE = 31449600
+CSRF_COOKIE_DOMAIN = None
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_COOKIE_PATH = '/'
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_SECURE = False
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+CSRF_TRUSTED_ORIGINS = []
+CSRF_USE_SESSIONS = False
+DATABASES = {'default': {'ENGINE': 'django.db.backends.postgresql_psycopg2', 'NAME': 'exchangeserver', 'USER': 'exchangeserver', 'PASSWORD': '********************', 'HOST': '172.17.0.1', 'PORT': '', 'ATOMIC_REQUESTS': False, 'AUTOCOMMIT': True, 'CONN_MAX_AGE': 0, 'OPTIONS': {}, 'TIME_ZONE': None, 'TEST': {'CHARSET': None, 'COLLATION': None, 'NAME': None, 'MIRROR': None}}}
+DATABASE_ROUTERS = []
+DATA_UPLOAD_MAX_MEMORY_SIZE = 2621440
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 1000
+DATETIME_FORMAT = 'N j, Y, P'
+DATETIME_INPUT_FORMATS = ['%d.%m.%Y', '%d.%m.%Y %H:%M:%S']
+DATE_FORMAT = 'N j, Y'
+DATE_INPUT_FORMATS = ['%d.%m.%Y']
+DEBUG = True
+DEBUG_PROPAGATE_EXCEPTIONS = False
+DECIMAL_SEPARATOR = '.'
+DEFAULT_CHARSET = 'utf-8'
+DEFAULT_CONTENT_TYPE = 'text/html'
+DEFAULT_EXCEPTION_REPORTER_FILTER = 'django.views.debug.SafeExceptionReporterFilter'
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+DEFAULT_FROM_EMAIL = 'lbexchange@litebox.ru'
+DEFAULT_INDEX_TABLESPACE = ''
+DEFAULT_TABLESPACE = ''
+DISALLOWED_USER_AGENTS = []
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_PASSWORD = '********************'
+EMAIL_HOST_USER = 'lbexchange@litebox.ru'
+EMAIL_PORT = 587
+EMAIL_SSL_CERTFILE = None
+EMAIL_SSL_KEYFILE = '********************'
+EMAIL_SUBJECT_PREFIX = '[Django] '
+EMAIL_TIMEOUT = None
+EMAIL_USE_LOCALTIME = False
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+FILE_CHARSET = 'utf-8'
+FILE_UPLOAD_DIRECTORY_PERMISSIONS = None
+FILE_UPLOAD_HANDLERS = ['django.core.files.uploadhandler.MemoryFileUploadHandler', 'django.core.files.uploadhandler.TemporaryFileUploadHandler']
+FILE_UPLOAD_MAX_MEMORY_SIZE = 2621440
+FILE_UPLOAD_PERMISSIONS = None
+FILE_UPLOAD_TEMP_DIR = None
+FIRST_DAY_OF_WEEK = 0
+FIXTURE_DIRS = []
+FORCE_SCRIPT_NAME = None
+FORMAT_MODULE_PATH = None
+FORM_RENDERER = 'django.forms.renderers.DjangoTemplates'
+IGNORABLE_404_URLS = []
+INSTALLED_APPS = ['django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes', 'django.contrib.sessions', 'django.contrib.messages', 'django.contrib.staticfiles', 'django.contrib.sites', 'compressor', 'rest_framework', 'rest_framework.authtoken', 'rest_framework_swagger', 'allauth', 'allauth.account', 'rest_auth', 'exchange.apps.ExchangeConfig']
+INTERNAL_IPS = []
+LANGUAGES = [('af', 'Afrikaans'), ('ar', 'Arabic'), ('ast', 'Asturian'), ('az', 'Azerbaijani'), ('bg', 'Bulgarian'), ('be', 'Belarusian'), ('bn', 'Bengali'), ('br', 'Breton'), ('bs', 'Bosnian'), ('ca', 'Catalan'), ('cs', 'Czech'), ('cy', 'Welsh'), ('da', 'Danish'), ('de', 'German'), ('dsb', 'Lower Sorbian'), ('el', 'Greek'), ('en', 'English'), ('en-au', 'Australian English'), ('en-gb', 'British English'), ('eo', 'Esperanto'), ('es', 'Spanish'), ('es-ar', 'Argentinian Spanish'), ('es-co', 'Colombian Spanish'), ('es-mx', 'Mexican Spanish'), ('es-ni', 'Nicaraguan Spanish'), ('es-ve', 'Venezuelan Spanish'), ('et', 'Estonian'), ('eu', 'Basque'), ('fa', 'Persian'), ('fi', 'Finnish'), ('fr', 'French'), ('fy', 'Frisian'), ('ga', 'Irish'), ('gd', 'Scottish Gaelic'), ('gl', 'Galician'), ('he', 'Hebrew'), ('hi', 'Hindi'), ('hr', 'Croatian'), ('hsb', 'Upper Sorbian'), ('hu', 'Hungarian'), ('ia', 'Interlingua'), ('id', 'Indonesian'), ('io', 'Ido'), ('is', 'Icelandic'), ('it', 'Italian'), ('ja', 'Japanese'), ('ka', 'Georgian'), ('kab', 'Kabyle'), ('kk', 'Kazakh'), ('km', 'Khmer'), ('kn', 'Kannada'), ('ko', 'Korean'), ('lb', 'Luxembourgish'), ('lt', 'Lithuanian'), ('lv', 'Latvian'), ('mk', 'Macedonian'), ('ml', 'Malayalam'), ('mn', 'Mongolian'), ('mr', 'Marathi'), ('my', 'Burmese'), ('nb', 'Norwegian Bokmål'), ('ne', 'Nepali'), ('nl', 'Dutch'), ('nn', 'Norwegian Nynorsk'), ('os', 'Ossetic'), ('pa', 'Punjabi'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('pt-br', 'Brazilian Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'), ('sk', 'Slovak'), ('sl', 'Slovenian'), ('sq', 'Albanian'), ('sr', 'Serbian'), ('sr-latn', 'Serbian Latin'), ('sv', 'Swedish'), ('sw', 'Swahili'), ('ta', 'Tamil'), ('te', 'Telugu'), ('th', 'Thai'), ('tr', 'Turkish'), ('tt', 'Tatar'), ('udm', 'Udmurt'), ('uk', 'Ukrainian'), ('ur', 'Urdu'), ('vi', 'Vietnamese'), ('zh-hans', 'Simplified Chinese'), ('zh-hant', 'Traditional Chinese')]
+LANGUAGES_BIDI = ['he', 'ar', 'fa', 'ur']
+LANGUAGE_CODE = 'en-us'
+LANGUAGE_COOKIE_AGE = None
+LANGUAGE_COOKIE_DOMAIN = None
+LANGUAGE_COOKIE_NAME = 'django_language'
+LANGUAGE_COOKIE_PATH = '/'
+LOCALE_PATHS = []
+LOGGED_HEADERS = "('CONTENT_LENGTH', 'CONTENT_TYPE', 'HTTP_ACCEPT', 'HTTP_ACCEPT_ENCODING', 'HTTP_ACCEPT_LANGUAGE', 'HTTP_HOST', 'HTTP_REFERER', 'HTTP_USER_AGENT', 'QUERY_STRING', 'REMOTE_ADDR', 'REMOTE_HOST', 'REMOTE_USER', 'REQUEST_METHOD', 'SERVER_NAME', 'SERVER_PORT')"
+LOGGING = {}
+LOGGING_CONFIG = 'logging.config.dictConfig'
+LOGIN_REDIRECT_URL = '/accounts/profile/'
+LOGIN_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = None
+MANAGERS = []
+MEDIA_ROOT = ''
+MEDIA_URL = ''
+MESSAGE_STORAGE = 'django.contrib.messages.storage.fallback.FallbackStorage'
+MIDDLEWARE = ['django.middleware.security.SecurityMiddleware', 'django.contrib.sessions.middleware.SessionMiddleware', 'django.middleware.common.CommonMiddleware', 'django.middleware.csrf.CsrfViewMiddleware', 'django.contrib.auth.middleware.AuthenticationMiddleware', 'django.contrib.messages.middleware.MessageMiddleware', 'django.middleware.clickjacking.XFrameOptionsMiddleware']
+MIGRATION_MODULES = {}
+MONTH_DAY_FORMAT = 'F j'
+MTS_API_VERSION = '********************'
+MTS_EKKT_API_SERVER = '********************'
+MTS_ERROR_CODE = {'42': 'Вызываемый метод не поддерживает post запрос', '420': 'Неправильный формат данных в запросе', '421': 'Неверный идентификатор регистрации', '422': 'Неверный идентификатор регистрации', '431': 'Неверный идентификатор документа регистрации', '432': 'Неверный идентификатор регистрации', '423': 'Регистрация не найдена', '623': 'Документ не найден', '424': 'Регистрация существует и не может быть перезапущена', '500': 'Внутрення ошибка сервиса МТС ОФД', '501': 'Внутрення ошибка сервиса МТС ОФД', '520': 'Неверные данные (вызванные при создании или проверке документа)', '530': 'Неверный данные в post запросе', '531': 'Неверный данные в post запросе', '542': 'Неверный данные в post запросе', '742': 'Неверная подпись документа'}
+MTS_OFD_API_SERVER = '********************'
+NUMBER_GROUPING = 0
+PASSWORD_HASHERS = '********************'
+PASSWORD_RESET_TIMEOUT_DAYS = '********************'
+PAY_DOC_TYPE = ['Платежное поручение']
+PAY_IGNORE_INN = ['7841016636']
+PAY_RECIPIENTS = ['6316202773', '7325136173']
+PREPEND_WWW = False
+REST_FRAMEWORK = {'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning', 'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'], 'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.SessionAuthentication', 'rest_framework.authentication.TokenAuthentication'), 'DEFAULT_PARSER_CLASSES': ('rest_framework.parsers.JSONParser', 'rest_framework.parsers.FormParser', 'rest_framework.parsers.MultiPartParser', 'rest_framework.parsers.FileUploadParser')}
+ROOT_URLCONF = 'exchangeserver.urls'
+SA_CONFIG = {'SA_TEST': {'sa_url': 'https://sa-test.litebox.ru', 'sa_username': '_system_admin_test', 'sa_password': '********************', 'sa_token': '********************'}, 'SA_RELEASE': {'sa_url': 'https://in.litebox.ru', 'sa_username': '_system_admin_pro', 'sa_password': '********************', 'sa_token': '********************'}, 'SA_LOCAL': {}, 'TEST': {'sa_url': 'https://sa-test.litebox.ru', 'sa_username': '_system_admin_test', 'sa_password': '********************'}}
+SA_DEFAULT = 'SA_RELEASE'
+SECRET_KEY = '********************'
+SECURE_BROWSER_XSS_FILTER = False
+SECURE_CONTENT_TYPE_NOSNIFF = False
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_HSTS_PRELOAD = False
+SECURE_HSTS_SECONDS = 0
+SECURE_PROXY_SSL_HEADER = None
+SECURE_REDIRECT_EXEMPT = []
+SECURE_SSL_HOST = None
+SECURE_SSL_REDIRECT = False
+SERVER_EMAIL = 'lbexchange@litebox.ru'
+SESSION_CACHE_ALIAS = 'default'
+SESSION_COOKIE_AGE = 1209600
+SESSION_COOKIE_DOMAIN = None
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_PATH = '/'
+SESSION_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SECURE = False
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_FILE_PATH = None
+SESSION_SAVE_EVERY_REQUEST = False
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+SETTINGS_MODULE = 'exchangeserver.settings'
+SHORT_DATETIME_FORMAT = 'm/d/Y P'
+SHORT_DATE_FORMAT = 'm/d/Y'
+SIGNING_BACKEND = 'django.core.signing.TimestampSigner'
+SILENCED_SYSTEM_CHECKS = []
+SITE_ID = 1
+STATICFILES_DIRS = "(('images', '/usr/src/app/static/images'), ('css', '/usr/src/app/static/css'))"
+STATICFILES_FINDERS = ['django.contrib.staticfiles.finders.FileSystemFinder', 'django.contrib.staticfiles.finders.AppDirectoriesFinder']
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATIC_ROOT = '/usr/src/app/static'
+STATIC_URL = '/static/'
+SWAGGER_SETTINGS = {'LOGIN_URL': 'login', 'LOGOUT_URL': 'logout'}
+TASKSERVER_URL_PORT = '8765'
+TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates', 'DIRS': ['/usr/src/app/templates'], 'APP_DIRS': True, 'OPTIONS': {'context_processors': ['django.template.context_processors.debug', 'django.template.context_processors.request', 'django.contrib.auth.context_processors.auth', 'django.contrib.messages.context_processors.messages']}}]
+TEST_NON_SERIALIZED_APPS = []
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+THOUSAND_SEPARATOR = ','
+TIME_FORMAT = 'P'
+TIME_INPUT_FORMATS = ['%H:%M:%S', '%H:%M:%S.%f', '%H:%M']
+TIME_ZONE = 'UTC'
+USER_GROUPS = {'INNER_CONNECTOR': 'Внутренний коннектор', 'EXTERNAL_CONNECTOR': 'Внешний коннектор', 'OFD_CONNECTOR': 'ОФД коннектор', 'KHORTITSA': 'KHORTITSA'}
+USE_I18N = True
+USE_L10N = True
+USE_THOUSAND_SEPARATOR = False
+USE_TZ = True
+USE_X_FORWARDED_HOST = False
+USE_X_FORWARDED_PORT = False
+WSGI_APPLICATION = 'exchangeserver.wsgi.application'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+YANDEX_API_SERVER = '********************'
+YANDEX_ERROR_CODE = {'400': {'5': 'Ошибочные данные в запросе', '8': 'Неверный адрес', '30': 'Неверный код из смс', '31': 'Сессия КСКПЭП неактивна', '33': 'Для продолжения регистрации необходим пин код КСКПЭП', '35': 'Неверный пин код КСКПЭП', '41': 'Калуга-Астрал ответил ошибкой', '42': 'Заявка находится в неверном состоянии', '43': 'Не удалось получить сертификат', '48': 'Неизвестный тип группировки для агрегации', '61': 'Неверный формат файла', '62': 'Заявка на заведение кассы находится в неверном состоянии'}, '405': {'0': 'HTTP метод запрещен для данного ресурса'}, '401': {'1': 'Ошибка авторизации в Яндекс ОФД', '2': 'Ошибка авторизации в Яндекс ОФД'}, '403': {'3': 'К запрошенной компании нет доступа или она не существует', '4': 'К запрошенной кассе нет доступа или она не существует', '18': 'Диалог регистрации не найден', '22': 'Точка продаж не найдена', '23': 'Регистрация в неправильном статусе чтобы вызывать этот метод', '25': 'Документ не найден', '27': 'Поставщик не найден', '29': 'Не найдена облачная подпись', '34': 'У клиента нет доступа к данному предложению', '60': 'Перерегистрация кассы не найдена'}, '422': {'7': 'Неверная структура тела запроса'}, '500': {'0': 'Внутренняя ошибка Яндекс ОФД.', '26': 'Ошибка соединения с ФНС', '35': 'Не удалось создать запрос на регистрацию', '36': 'Неудачная попытка регистрации', '37': 'Файл не был передан', '38': 'Не удалось добавить документ к запросу на регистрацию', '39': 'Запрос на регистрацию не найден', '40': 'Не удалось отправить заявку в Калуга-Астрал', '51': 'Не удалось создать запрос на изменение', '55': 'Не удалось удалить заявку'}, '503': {'47': 'Не удалось скачать файл'}}
+YANDEX_ERROR_CODE_422_7 = {'0': 'некорректный формат поля', '1': 'некорректный формат поля', '2': 'неверный тип поля', '3': 'отсутствует обязательное поле', '4': 'поле не может быть пустым', '5': 'неизвестное поле', '6': 'поле не найдено', '7': 'ERR_NOT_ALLOWED', '8': 'купон отключен', '9': 'купон выключен', '10': 'некорректный инн для применяемого купона', '11': 'превышена квота по купонам', '12': 'в визард переданы ККТ из разных компаний'}
+YANDEX_ERROR_CODE_FIELDS = {'fns': 'ифнс организации', 'sn': 'заводской номер ККТ', 'fiscal_drive_sn': 'номер фискального накопителя', 'signer': 'подпись', 'coupon/quota/months': 'промокод', 'kkt_fns': 'ифнс кассы', 'address_parts/postal_code': 'адрес/индекс', 'address_parts/block': 'адрес/блок', 'address_parts/region': 'адрес/регион', 'address_parts/street': 'адрес/улица', 'address_parts/house': 'адрес/дом', 'address_parts/settlement': 'адрес/поселок', 'address_parts/city': 'адрес/город', 'terminal_sn': 'серийный номер терминала', 'password': '********************', 'email': 'email'}
+YANDEX_X_OFD_KEY = '********************'
+YANDEX_X_YANDEX_KEY = '********************'
+YEAR_MONTH_FORMAT = 'F Y'
+
+
+You're seeing this error because you have DEBUG = True in your
+Django settings file. Change that to False, and Django will
+display a standard page generated by the handler for this status code.
+
